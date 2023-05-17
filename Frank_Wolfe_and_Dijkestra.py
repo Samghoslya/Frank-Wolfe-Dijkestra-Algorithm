@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 from scipy import optimize
@@ -6,7 +5,6 @@ from scipy.optimize import minimize_scalar
 import scipy.linalg as la
 import numpy.linalg as la2
 import scipy.integrate as integrate
-
 
 def firstfunc(t0,xa,ca):
 	ta = t0*(1+0.15*(xa/ca)**4) #calculating Cij values using Vij and Kij, constants 0.15 and 4 have been obtained from online sources
@@ -35,8 +33,6 @@ t0 = coeff[:,0]
 n = 76 # number of total links
 k = 24 # number of total nodes
 
-
-
 	## creat link flow matrix for iterations (Y)
 s = (n,k) # 76 links, 24 nodes/origins
 	#Y = np.zeros(s) # each entry represents the flow on link a from origin i
@@ -44,7 +40,6 @@ s = (n,k) # 76 links, 24 nodes/origins
 
 t0 = coeff [:,0] # free flow travel time from 1st column of *Coeff*
 ca = coeff[:,1] # capacity for each link
-
 
 origq = np.sum(Q, axis = 1) # row sums of Q: total flow from origin i
 destq = -Q
@@ -77,10 +72,8 @@ xa = np.sum(result, axis = 0) # intialization xa
 	#print xa
 ta = firstfunc(t0,xa,ca)
 
-
 step = 0
 tanorm = 1000000
-
 iteration = []
 Z = []
 
@@ -106,10 +99,8 @@ while (tanorm>(n/10)):
 	print ("norm of ta is ", tanorm)
 	step +=1# allow each link has 0.1 diff. in ta on average
 	
-
 print("flow on each link is ", xa)
 print("ttravel time on each link is", ta)
-
 
 LinkNode = LinkNode.to_numpy()
 taa = pd.DataFrame(ta)
@@ -152,7 +143,6 @@ def linktomatrix(LinkNode, ta):
     			key2 = str(int(val[1]))
     			d[key1][key2] = val[2]
     	return d
-
 
     d = retro_dictify(od)
     #print(d)
@@ -211,7 +201,7 @@ def linktomatrix(LinkNode, ta):
         #print(Matrix)
         return Matrix, Matrix1
     time, routes = dijkestra(graph)
-    
+   
     return time, routes
 
 t_time, Routes = linktomatrix(LinkNode, taa)
