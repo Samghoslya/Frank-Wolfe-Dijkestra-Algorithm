@@ -1,5 +1,5 @@
 # Frank-Wolfe-Dijkestra-Algorithm
-Analysis is done for Sioux Falls Netword to find equilibrium travel time, flows and shortest paths in a static case
+Analysis is done for Sioux Falls Network to find equilibrium O-D travel times, equilibrium link flows, link travel times, and shortest O-D paths in a static assignment case
 
 **How to Start**
 * keep all the files in same repository 
