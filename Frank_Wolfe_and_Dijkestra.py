@@ -23,11 +23,11 @@ def linearsearch(xa,ca,t0,ya):
 	return alpha.x
 
 #import the demand, free flow travel times, network and capacities
-LinkNode = pd.read_csv("linknode2.csv", header = None)
+LinkNode = pd.read_csv("linknode.csv", header = None)
 Q = pd.read_csv("demand.csv", header = None)
 Q = Q.to_numpy()
 y = np.copy(Q)
-coeff = pd.read_csv("coefficient2.csv", header = None)
+coeff = pd.read_csv("coefficient.csv", header = None)
 coeff = coeff.to_numpy()
 t0 = coeff[:,0]
 
