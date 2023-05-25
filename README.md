@@ -6,5 +6,5 @@ Analysis is done for Sioux Falls Network to find equilibrium O-D travel times, e
 
 **Steps:**
 * Run Frank_Wolfe_and_Dijkestra.py
-* It will first run the Frank Wolfe Algorithm and compute the equilibrium travel times and flows for all links on the principle of Wardrop's First and second principal
-* Later it will run Dijkestra algorithm to find the shortest path route and travel times from each origin to destination
+* It will first run the Frank Wolfe Algorithm and compute the equilibrium travel times and flows for all links on Wardrop's First and second principal
+* After it will run Dijkestra algorithm to find the shortest path routes and travel times from each origin to each destination
